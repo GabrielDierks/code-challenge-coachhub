@@ -2,5 +2,6 @@
 package-lock.json
 .idea
 .vscode
+.history
 yarn.lock
 config/keys_dev.js

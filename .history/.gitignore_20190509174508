@@ -1,7 +1,0 @@
-/node_modules
-package-lock.json
-.idea
-.vscode
-yarn.lock
-config/keys_dev.js
-.env
