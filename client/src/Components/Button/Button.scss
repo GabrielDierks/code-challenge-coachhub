@@ -4,7 +4,7 @@ button {
   border-radius: 50%;
   color: #fff;
   background: #999;
-  margin: 0px 10px;
+  margin: 0px 20px;
   border: 2px solid #f1f3f4;
   outline-style: none;
   cursor: pointer;
@@ -51,9 +51,9 @@ button {
     background: rgb(253, 64, 64);
     height: 20px;
     width: 20px;
-    padding: 0px;
-    margin: 0;
-    vertical-align: super;
+    padding: 0;
+    margin: 10px;
+    vertical-align: top;
 
     &:before,
     &:after {

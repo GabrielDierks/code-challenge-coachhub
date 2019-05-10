@@ -7,3 +7,9 @@ body {
     outline-style: none; }
     body .App h1 {
       margin-bottom: 50px; }
+    body .App form {
+      position: relative;
+      transform: translateX(-50%);
+      left: 50%;
+      width: 290px;
+      text-align: left; }

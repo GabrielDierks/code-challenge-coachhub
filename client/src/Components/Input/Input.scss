@@ -1,9 +1,11 @@
 .input {
-  display: inline;
-  margin: 50px 10px;
   padding: 5px 15px;
   outline-style: none;
   border-radius: 5px;
   border: 2px solid #f1f3f4;
   user-select: none;
+  &.desc {
+    height: 200px;
+    display: none;
+  }
 }
