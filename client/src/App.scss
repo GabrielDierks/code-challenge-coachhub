@@ -1,7 +1,13 @@
-.App {
-  margin: 0;
-  h1,
-  p {
+body {
+  background-color: #222;
+  color: #fff;
+  .App {
+    margin: 100px;
     text-align: center;
+    outline-style: none;
+
+    h1 {
+      margin-bottom: 50px;
+    }
   }
 }

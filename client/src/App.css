@@ -1,5 +1,9 @@
-.App {
-  margin: 0; }
-  .App h1,
-  .App p {
-    text-align: center; }
+body {
+  background-color: #222;
+  color: #fff; }
+  body .App {
+    margin: 100px;
+    text-align: center;
+    outline-style: none; }
+    body .App h1 {
+      margin-bottom: 50px; }

@@ -1,0 +1,70 @@
+ul {
+  padding: 0;
+  margin: 0; }
+  ul li {
+    list-style: none; }
+    ul li .text {
+      vertical-align: super;
+      display: inline-block;
+      margin: 0 80px 0 20px;
+      font-size: 28px;
+      border: 0;
+      background: 0;
+      width: 90px;
+      color: #fff; }
+    ul li .container {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      font-size: 22px;
+      height: 30px;
+      width: 30px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+    ul li .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0; }
+    ul li .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 30px;
+      width: 30px;
+      background-color: #fff;
+      transition: all 0.1s ease;
+      transform: scale(0.95);
+      transform-origin: 50% 70%;
+      border-radius: 25px;
+      border: 2px solid #f1f3f4; }
+    ul li .container:hover input ~ .checkmark {
+      background-color: #ccc;
+      transform: scale(1); }
+    ul li .container input:checked ~ .checkmark {
+      background-color: #2196f3; }
+    ul li .checkmark:after,
+    ul li .checkmark:before {
+      content: "";
+      position: absolute;
+      display: none; }
+    ul li .container input:checked ~ .checkmark:after,
+    ul li .container input:checked ~ .checkmark:before {
+      display: inline-block; }
+    ul li .container .checkmark:after {
+      left: 10px;
+      top: 7px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+  ul p {
+    display: inline-block;
+    margin: 0; }
