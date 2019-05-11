@@ -1,12 +1,15 @@
 import React, { useState } from "react"
+import axios from "axios"
+
 import "./TodoItem.css"
 
 import { Button } from "../Button/"
 
-export const TodoItem = ({ name, description, onDelete, checked }) => {
+export const TodoItem = ({ _id, name, description, checked }) => {
   let [title, setTitle] = useState(name)
   let [desc, setText] = useState(description)
   let [check, setCheck] = useState(checked)
+  let [remove, onDelete] = useState(false)
 
   let changeTitle = event => {
     setTitle(event.target.value)
@@ -16,15 +19,21 @@ export const TodoItem = ({ name, description, onDelete, checked }) => {
     setText(event.target.value)
   }
 
-  return (
+  let handleCheck = () => {
+    setCheck(!check)
+    axios.post(`api/todos/${_id}`, { check }).catch(err => console.log(err))
+  }
+
+  let handleDelete = () => {
+    onDelete(true)
+    axios.delete(`api/todos/${_id}`).catch(err => console.log(err))
+  }
+
+  const Item = (
     <>
       <li>
         <label className="container">
-          <input
-            type="checkbox"
-            onChange={() => setCheck(!check)}
-            checked={check}
-          />
+          <input type="checkbox" onChange={handleCheck} checked={check} />
           <span className="checkmark" />
         </label>
         <textarea
@@ -35,8 +44,8 @@ export const TodoItem = ({ name, description, onDelete, checked }) => {
           maxLength="199"
           onChange={changeTitle}
         />
-        <Button color="red" onClick={onDelete} />
-        <Button color="blue" onClick={onDelete} />
+        <Button color="red" onClick={handleDelete} />
+        {/* <Button color="blue" onClick={} /> */}
       </li>
       <textarea
         type="text"
@@ -48,4 +57,5 @@ export const TodoItem = ({ name, description, onDelete, checked }) => {
       />
     </>
   )
+  return remove ? null : Item
 }

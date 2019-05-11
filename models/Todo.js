@@ -3,12 +3,15 @@ const Schema = mongoose.Schema
 
 // Create Schema
 const TodoSchema = new Schema({
-  title: {
+  name: {
     type: String,
     required: true
   },
-  text: {
+  description: {
     type: String
+  },
+  checked: {
+    type: Boolean
   }
 })
 

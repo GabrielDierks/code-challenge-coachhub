@@ -1,19 +1,28 @@
-import React, { useState } from "react"
-import "./App.css"
+import React, { useState, useEffect } from "react"
+import axios from "axios"
 
+import "./App.css"
 import { Button } from "./Components/Button/"
 import { Input } from "./Components/Input/"
 import { TodoItem } from "./Components/TodoItem"
 
-const item = [
-  { id: 1, name: "todo1", description: "description 1", checked: false },
-  { id: 2, name: "todo2", description: "description 2", checked: false }
-]
-
 const App = () => {
+  let [todos, setTodos] = useState([])
   let [title, setTitle] = useState("")
   let [text, setText] = useState("")
   let [showDesc, setVisible] = useState(false)
+  let [loading, setLoading] = useState(true)
+
+  let getPosts = () => {
+    axios
+      .get("api/todos")
+      .then(res => setTodos(res.data))
+      .then(setLoading(false))
+      .catch(err => console.log(err))
+  }
+  useEffect(() => {
+    getPosts()
+  }, [])
 
   let changeTitle = event => {
     setTitle(event.target.value)
@@ -24,30 +33,22 @@ const App = () => {
     setText(event.target.value)
   }
 
-  let handleRemove = () => {
-    item.splice(0, 1)
-    console.log({ item })
-  }
-
   let handleSubmit = event => {
     event.preventDefault()
     if (title) {
-      item.reverse()
-      item.push({
-        id: item.length + 1,
+      const newTodo = {
         name: title,
         description: text,
         checked: false
-      })
-      item.reverse()
+      }
 
-      console.log({ item })
+      axios.post("api/todos", newTodo).catch(err => console.log(err))
+      getPosts()
       setVisible(false)
       setTitle("")
       setText("")
     }
   }
-
   return (
     <div className="App">
       <h1> Code Challange Coachhub.io</h1>
@@ -67,14 +68,18 @@ const App = () => {
           value={text}
           visible={showDesc}
           onChange={changeText}
-          placeholder="Description"
+          placeholder="add a description"
           maxLength="180"
         />
       </form>
       <ul>
-        {item.map(item => (
-          <TodoItem onDelete={handleRemove} key={item.id} {...item} />
-        ))}
+        {loading ? (
+          <p>LOADING</p>
+        ) : todos.length === 0 ? (
+          <p>No Todos yet, add a new one above.</p>
+        ) : (
+          todos.map(todos => <TodoItem key={todos._id} {...todos} />)
+        )}
       </ul>
     </div>
   )

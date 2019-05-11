@@ -7,6 +7,10 @@ body {
     outline-style: none; }
     body .App h1 {
       margin-bottom: 50px; }
+    body .App p {
+      position: relative;
+      transform: translateX(-50%);
+      left: 50%; }
     body .App form {
       position: relative;
       transform: translateX(-50%);
