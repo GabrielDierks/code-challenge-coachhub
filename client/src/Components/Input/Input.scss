@@ -3,9 +3,27 @@
   outline-style: none;
   border-radius: 5px;
   border: 2px solid #f1f3f4;
-  user-select: none;
+  vertical-align: top;
+  resize: none;
+  height: 40px;
+  transition: 1s all 1s ease-in;
+  font-weight: bold;
+  width: 500px;
+
   &.desc {
-    height: 200px;
-    display: none;
+    height: 150px;
+    margin: 10px 0;
+    font-weight: normal;
   }
+}
+
+input {
+  -webkit-outline-style: none;
+  -moz-outline-style: none;
+  -ms-outline-style: none;
+  outline-style: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
