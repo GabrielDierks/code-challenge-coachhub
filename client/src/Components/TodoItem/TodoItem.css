@@ -8,7 +8,6 @@ ul {
   left: 50%; }
   ul .title,
   ul .text {
-    vertical-align: super;
     display: inline-block;
     resize: none;
     overflow: hidden; }

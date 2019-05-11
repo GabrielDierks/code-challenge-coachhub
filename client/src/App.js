@@ -32,12 +32,15 @@ const App = () => {
   let handleSubmit = event => {
     event.preventDefault()
     if (title) {
+      item.reverse()
       item.push({
         id: item.length + 1,
         name: title,
         description: text,
         checked: false
       })
+      item.reverse()
+
       console.log({ item })
       setVisible(false)
       setTitle("")
