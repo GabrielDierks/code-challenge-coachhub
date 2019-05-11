@@ -34,6 +34,7 @@ const App = () => {
   }
 
   let handleSubmit = event => {
+    setLoading(true)
     event.preventDefault()
     if (title) {
       const newTodo = {
@@ -47,6 +48,7 @@ const App = () => {
       setVisible(false)
       setTitle("")
       setText("")
+      setLoading(false)
     }
   }
   return (
