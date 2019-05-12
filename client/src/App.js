@@ -43,12 +43,14 @@ const App = () => {
         checked: false
       }
 
-      axios.post("api/todos", newTodo).catch(err => console.log(err))
-      getPosts()
+      axios
+        .post("api/todos", newTodo)
+        .then(res => setTodos([...todos, res.data]))
+        .then(setLoading(false))
+        .catch(err => console.log(err))
       setVisible(false)
       setTitle("")
       setText("")
-      setLoading(false)
     }
   }
   return (

@@ -39,7 +39,7 @@ router.post("/", (req, res) => {
 // @route   POST api/todos/:id
 // @desc    Check Todo
 // @access  Public
-router.post("/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   Todo.findOne({ _id: req.params.id })
     .updateOne({ checked: !req.body.check })
     .then(todo => res.json(todo))

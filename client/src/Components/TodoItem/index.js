@@ -45,7 +45,7 @@ export const TodoItem = ({ _id, name, description, checked }) => {
           onChange={changeTitle}
         />
         <Button color="red" onClick={handleDelete} />
-        {/* <Button color="blue" onClick={} /> */}
+        <Button color="blue" />
       </li>
       <textarea
         type="text"
