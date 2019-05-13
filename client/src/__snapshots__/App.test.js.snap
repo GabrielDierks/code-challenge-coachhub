@@ -5,10 +5,29 @@ exports[`App snapshot 1`] = `
   className="App"
 >
   <h1>
-     Code Challange Coachhub
+     Code Challange Coachhub.io
   </h1>
-  <p>
-    TODO APP
-  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <textarea
+      className="input undefined"
+      maxLength="199"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="add a new Todo"
+      type="text"
+      value=""
+    />
+    <button
+      className="greenBig"
+    />
+  </form>
+  <ul>
+    <p>
+      LOADING
+    </p>
+  </ul>
 </div>
 `;

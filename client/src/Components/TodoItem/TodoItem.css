@@ -18,7 +18,8 @@ ul {
     background: 0;
     height: 40px;
     color: #fff;
-    font-weight: bold; }
+    font-weight: bold;
+    vertical-align: baseline; }
   ul .text {
     margin: 0 80px 20px 50px;
     font-size: 14px;
@@ -86,3 +87,9 @@ ul {
     margin: 0; }
   ul button {
     float: right; }
+
+textarea {
+  -webkit-outline-style: none;
+  -moz-outline-style: none;
+  -ms-outline-style: none;
+  outline-style: none; }

@@ -12,6 +12,7 @@ const App = () => {
   let [text, setText] = useState("")
   let [showDesc, setVisible] = useState(false)
   let [loading, setLoading] = useState(true)
+  let [focus, onFocus] = useState(false)
 
   let getPosts = () => {
     axios
@@ -25,6 +26,7 @@ const App = () => {
   }, [])
 
   let changeTitle = event => {
+    onFocus(false)
     setTitle(event.target.value)
     setVisible(true)
   }
@@ -34,9 +36,10 @@ const App = () => {
   }
 
   let handleSubmit = event => {
-    setLoading(true)
     event.preventDefault()
     if (title) {
+      setLoading(true)
+
       const newTodo = {
         name: title,
         description: text,
@@ -45,14 +48,15 @@ const App = () => {
 
       axios
         .post("api/todos", newTodo)
-        .then(res => setTodos([...todos, res.data]))
+        .then(res => setTodos([res.data, ...todos]))
         .then(setLoading(false))
         .catch(err => console.log(err))
       setVisible(false)
       setTitle("")
       setText("")
-    }
+    } else onFocus(true)
   }
+
   return (
     <div className="App">
       <h1> Code Challange Coachhub.io</h1>
@@ -63,9 +67,10 @@ const App = () => {
           visible={true}
           onChange={changeTitle}
           placeholder="add a new Todo"
-          maxLength="22"
+          maxLength="199"
+          focus={focus}
         />
-        <Button color="green" type="submit" />
+        <Button color="greenBig" type="submit" />
         <Input
           type="text"
           name="desc"
@@ -73,7 +78,7 @@ const App = () => {
           visible={showDesc}
           onChange={changeText}
           placeholder="add a description"
-          maxLength="180"
+          maxLength="599"
         />
       </form>
       <ul>

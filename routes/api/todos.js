@@ -41,7 +41,11 @@ router.post("/", (req, res) => {
 // @access  Public
 router.put("/:id", (req, res) => {
   Todo.findOne({ _id: req.params.id })
-    .updateOne({ checked: !req.body.check })
+    .updateOne({
+      checked: req.body.serverCheck,
+      name: req.body.title,
+      description: req.body.desc
+    })
     .then(todo => res.json(todo))
     .catch(err => res.status(404).json({ todonotfound: "No todo found" }))
 })
