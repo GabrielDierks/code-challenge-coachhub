@@ -4,6 +4,9 @@ body {
   .App {
     margin: 40px 5px;
     @media (min-width: 512px) {
+      margin: 100px 20%;
+    }
+    @media (min-width: 1280px) {
       margin: 100px 25%;
     }
     text-align: center;

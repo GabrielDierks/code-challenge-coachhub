@@ -32,7 +32,11 @@ const App = () => {
   let changeTitle = event => {
     onFocus(false)
     setTitle(event.target.value)
-    setVisible(true)
+    if (event.target.value === "") {
+      setVisible(false)
+    } else {
+      setVisible(true)
+    }
   }
 
   let changeText = event => {

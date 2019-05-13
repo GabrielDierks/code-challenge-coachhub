@@ -7,6 +7,9 @@ body {
     outline-style: none; }
     @media (min-width: 512px) {
       body .App {
+        margin: 100px 20%; } }
+    @media (min-width: 1280px) {
+      body .App {
         margin: 100px 25%; } }
     body .App h1 {
       margin-bottom: 50px;
