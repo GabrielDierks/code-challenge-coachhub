@@ -1,4 +1,4 @@
-# Code Challange für Coachhub.io
+# Code Challenge für Coachhub.io
 
 von Gabriel Dierks
 

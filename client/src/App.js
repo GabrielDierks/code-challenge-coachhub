@@ -69,7 +69,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1> Code Challange Coachhub.io</h1>
+      <h1> Code Challenge Coachhub.io</h1>
       <form onSubmit={handleSubmit}>
         <Input
           type="text"

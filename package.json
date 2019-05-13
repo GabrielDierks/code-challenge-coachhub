@@ -1,7 +1,7 @@
 {
   "name": "todo-app",
   "version": "0.0.1",
-  "description": "Code Challange Coachhub",
+  "description": "Code Challenge Coachhub",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

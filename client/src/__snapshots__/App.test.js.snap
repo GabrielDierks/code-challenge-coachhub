@@ -5,7 +5,7 @@ exports[`App snapshot 1`] = `
   className="App"
 >
   <h1>
-     Code Challange Coachhub.io
+     Code Challenge Coachhub.io
   </h1>
   <form
     onSubmit={[Function]}
