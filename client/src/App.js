@@ -11,18 +11,21 @@ const App = () => {
   let [title, setTitle] = useState("")
   let [text, setText] = useState("")
   let [showDesc, setVisible] = useState(false)
-  let [loading, setLoading] = useState(true)
+  let [loading, setLoading] = useState(false)
   let [focus, onFocus] = useState(false)
+  let [error, onError] = useState(null)
 
-  let getPosts = () => {
-    axios
+  let getTodos = async () => {
+    setLoading(true)
+
+    await axios
       .get("api/todos")
       .then(res => setTodos(res.data))
-      .then(setLoading(false))
-      .catch(err => console.log(err))
+      .catch(err => onError(err))
+    await setLoading(false)
   }
   useEffect(() => {
-    getPosts()
+    getTodos()
   }, [])
 
   let changeTitle = event => {
@@ -83,9 +86,11 @@ const App = () => {
       </form>
       <ul>
         {loading ? (
-          <p>LOADING</p>
-        ) : todos.length === 0 ? (
-          <p>No Todos yet, add a new one above.</p>
+          <p>loading ...</p>
+        ) : error ? (
+          <p style={{ color: "red" }}>
+            Error, couldnt connect to the database, please contact an admin.
+          </p>
         ) : (
           todos.map(todos => <TodoItem key={todos._id} {...todos} />)
         )}
