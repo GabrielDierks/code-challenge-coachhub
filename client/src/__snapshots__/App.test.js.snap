@@ -24,10 +24,6 @@ exports[`App snapshot 1`] = `
       className="greenBig"
     />
   </form>
-  <ul>
-    <p>
-      LOADING
-    </p>
-  </ul>
+  <ul />
 </div>
 `;

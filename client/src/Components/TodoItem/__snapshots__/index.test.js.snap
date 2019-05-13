@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo Item snapshot 1`] = `
+<li>
+  <label
+    className="container"
+  >
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="checkmark"
+    />
+  </label>
+  <span
+    className="title"
+  >
+    test
+  </span>
+  <button
+    className="red"
+    onClick={[Function]}
+  />
+  <button
+    className="blue"
+    onClick={[Function]}
+  />
+  <span
+    className="text"
+    maxLength="599"
+    onChange={[Function]}
+  >
+    testdescription
+  </span>
+  <span
+    className="text text-date"
+  >
+    last updated: 
+    May 13th 2019, 19:15:55
+  </span>
+</li>
+`;
