@@ -4,9 +4,9 @@ von Gabriel Dierks
 
 ## Spin up commands:
 
-#### npm start
+#### npm run install-all
 
-- starts the server
+- installs the required Node modules for server and client
 
 #### npm run dev
 
