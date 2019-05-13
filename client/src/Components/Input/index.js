@@ -16,6 +16,7 @@ export const Input = ({
   if (focus) {
     titleInput.focus()
   }
+
   const textArea = (
     <textarea
       className={`input ${name}`}

@@ -2,12 +2,16 @@ body {
   background-color: #222;
   color: #fff;
   .App {
-    margin: 100px;
+    margin: 40px 5px;
+    @media (min-width: 512px) {
+      margin: 100px 25%;
+    }
     text-align: center;
     outline-style: none;
 
     h1 {
       margin-bottom: 50px;
+      min-width: 320px;
     }
 
     p {
@@ -20,8 +24,8 @@ body {
       position: relative;
       transform: translateX(-50%);
       left: 50%;
-      max-width: 580px;
-      text-align: left;
+      max-width: 1000px;
+      min-width: 320px;
     }
   }
 }

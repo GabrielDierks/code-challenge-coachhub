@@ -62,12 +62,12 @@ export const TodoItem = ({ _id, name, description, checked }) => {
           <span className="checkmark" />
         </label>
         {disabled ? (
-          <textarea type="text" value={title} disabled className="title" />
+          <span className="title">{title}</span>
         ) : (
           <textarea
             type="text"
             value={title}
-            className="title"
+            className="title-edit"
             maxLength="199"
             autoFocus
             onChange={changeTitle}
@@ -83,15 +83,22 @@ export const TodoItem = ({ _id, name, description, checked }) => {
         ) : (
           <Button color="green" onClick={handleDisable} />
         )}
+
+        {disabled ? (
+          <span className="text" maxLength="599" onChange={changeText}>
+            {desc}
+          </span>
+        ) : (
+          <textarea
+            type="text"
+            disabled={disabled}
+            value={desc}
+            className="text-edit"
+            maxLength="599"
+            onChange={changeText}
+          />
+        )}
       </li>
-      <textarea
-        type="text"
-        disabled={disabled}
-        value={desc}
-        className="text"
-        maxLength="599"
-        onChange={changeText}
-      />
     </>
   )
   return remove ? null : Item

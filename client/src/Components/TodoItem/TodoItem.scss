@@ -9,39 +9,71 @@ ul {
 
   .title,
   .text {
+    word-break: break-word;
     display: inline-block;
-    resize: none;
-    overflow: hidden;
+    padding: 15px;
+    width: 65%;
   }
 
   .title {
-    margin: 0 80px 0 20px;
+    overflow: hidden;
+    margin-left: 10px;
     font-size: 28px;
-    border: 0;
-    background: 0;
-    height: 40px;
-    color: #fff;
-    font-weight: bold;
-    vertical-align: baseline;
+    vertical-align: top;
+
+    &-edit {
+      width: 65%;
+      margin: 5px;
+      @media (min-width: 512px) {
+        margin: 0 80px 0 20px;
+      }
+      resize: none;
+      font-size: 18px;
+      padding: 15px;
+      border: 0;
+      height: 180px;
+      background: 0;
+      color: #fff;
+      font-weight: bold;
+      background: #444 !important;
+    }
   }
+
   .text {
-    margin: 0 80px 20px 50px;
+    margin: 0 80px 20px 40px;
     font-size: 14px;
     border: 0;
     background: 0;
     color: #fff;
-    width: 80%;
+    &-edit {
+      width: 65%;
+      margin: 5px 35px;
+      @media (min-width: 512px) {
+        margin: 0 80px 20px 50px;
+      }
+      resize: none;
+      font-size: 14px;
+      padding: 15px;
+      border: 0;
+      height: 180px;
+      background: 0;
+      color: #fff;
+      font-weight: initial;
+      vertical-align: baseline;
+      background: #444 !important;
+    }
   }
   li {
     list-style: none;
+    padding: 10px;
     .container {
       position: relative;
-      margin: 0;
-      padding: 0;
+      margin: 21px 0;
       cursor: pointer;
       font-size: 22px;
       height: 30px;
       width: 30px;
+      vertical-align: top;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
@@ -102,6 +134,7 @@ ul {
   }
   button {
     float: right;
+    margin: 20px 5px !important;
   }
 }
 
