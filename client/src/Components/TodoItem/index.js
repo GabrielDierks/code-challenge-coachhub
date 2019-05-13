@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
+import moment from "moment"
 
 import "./TodoItem.css"
 
@@ -7,7 +8,7 @@ import { Button } from "../Button/"
 
 let titleItemInput
 
-export const TodoItem = ({ _id, name, description, checked }) => {
+export const TodoItem = ({ _id, name, description, date, checked }) => {
   let [title, setTitle] = useState(name)
   let [desc, setText] = useState(description)
   let [check, setCheck] = useState(checked)
@@ -33,8 +34,9 @@ export const TodoItem = ({ _id, name, description, checked }) => {
   let handleCheck = () => {
     setCheck(!check)
     let serverCheck = !check
+    let curDate = Date.now()
     axios
-      .put(`api/todos/${_id}`, { serverCheck, title, desc })
+      .put(`api/todos/${_id}`, { serverCheck, title, desc, curDate })
       .catch(err => console.log(err))
   }
 
@@ -45,14 +47,18 @@ export const TodoItem = ({ _id, name, description, checked }) => {
 
   let handleDisable = () => {
     onDisable(!disabled)
+
     let serverCheck = check
+    let curDate = Date.now()
 
     if (!disabled) {
       axios
-        .put(`api/todos/${_id}`, { serverCheck, title, desc })
+        .put(`api/todos/${_id}`, { serverCheck, title, desc, curDate })
         .catch(err => console.log(err))
     }
   }
+
+  let formatDate = moment(date).format("MMMM Do YYYY, HH:mm:ss")
 
   const Item = (
     <>
@@ -83,8 +89,7 @@ export const TodoItem = ({ _id, name, description, checked }) => {
         ) : (
           <Button color="green" onClick={handleDisable} />
         )}
-
-        {disabled ? (
+        {desc === "" && disabled ? null : disabled ? (
           <span className="text" maxLength="599" onChange={changeText}>
             {desc}
           </span>
@@ -98,6 +103,7 @@ export const TodoItem = ({ _id, name, description, checked }) => {
             onChange={changeText}
           />
         )}
+        <span className="text text-date">last updated: {formatDate}</span>
       </li>
     </>
   )

@@ -41,16 +41,16 @@ ul {
   }
 
   .text {
-    margin: 0 80px 20px 40px;
+    margin: 0 80px 0 40px;
     font-size: 14px;
     border: 0;
     background: 0;
     color: #fff;
     &-edit {
       width: 65%;
-      margin: 5px 35px;
+      margin: 5px 35px 0;
       @media (min-width: 512px) {
-        margin: 0 80px 20px 50px;
+        margin: 0 80px 0 50px;
       }
       resize: none;
       font-size: 14px;
@@ -63,6 +63,11 @@ ul {
       vertical-align: baseline;
       background: #444 !important;
       border-radius: 5px;
+    }
+    &-date {
+      font-size: 10px;
+      color: #999;
+      padding-top: 0;
     }
   }
   li {

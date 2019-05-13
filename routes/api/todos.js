@@ -15,7 +15,7 @@ router.get("/test", (req, res) => res.json({ msg: "todos route works" }))
 // @access  Public
 router.get("/", (req, res) => {
   Todo.find()
-    .sort({ _id: -1 })
+    .sort({ date: -1 })
     .then(todos => res.json(todos))
     .catch(err =>
       res.status(404).json({
@@ -31,12 +31,13 @@ router.post("/", (req, res) => {
   const newTodo = new Todo({
     name: req.body.name,
     description: req.body.description,
-    checked: req.body.checked
+    checked: req.body.checked,
+    date: req.body.date
   })
   newTodo.save().then(todo => res.json(todo))
 })
 
-// @route   POST api/todos/:id
+// @route   PUT api/todos/:id
 // @desc    Check Todo
 // @access  Public
 router.put("/:id", (req, res) => {
@@ -44,7 +45,8 @@ router.put("/:id", (req, res) => {
     .updateOne({
       checked: req.body.serverCheck,
       name: req.body.title,
-      description: req.body.desc
+      description: req.body.desc,
+      date: req.body.curDate
     })
     .then(todo => res.json(todo))
     .catch(err => res.status(404).json({ todonotfound: "No todo found" }))

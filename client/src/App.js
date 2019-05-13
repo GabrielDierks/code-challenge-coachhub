@@ -11,6 +11,7 @@ const App = () => {
   let [title, setTitle] = useState("")
   let [text, setText] = useState("")
   let [showDesc, setVisible] = useState(false)
+  let [date, setDate] = useState(Date.now())
   let [loading, setLoading] = useState(false)
   let [focus, onFocus] = useState(false)
   let [error, onError] = useState(null)
@@ -42,10 +43,12 @@ const App = () => {
     event.preventDefault()
     if (title) {
       setLoading(true)
+      setDate(Date.now())
 
       const newTodo = {
         name: title,
         description: text,
+        date: date,
         checked: false
       }
 

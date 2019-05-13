@@ -12,6 +12,9 @@ const TodoSchema = new Schema({
   },
   checked: {
     type: Boolean
+  },
+  date: {
+    type: Date
   }
 })
 
