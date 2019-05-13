@@ -8,6 +8,7 @@
   height: 40px;
   font-weight: bold;
   width: 70%;
+  margin: 0 20px 0 0;
 
   @keyframes open {
     0% {
@@ -18,7 +19,7 @@
     }
   }
   &.desc {
-    margin: 10px 0 10px -80px;
+    margin: 10px 20px 0 0;
     font-weight: normal;
     transition: 1s all 1s ease-in;
     animation: 0.2s forwards open ease-in;

@@ -70,7 +70,6 @@ const App = () => {
           maxLength="199"
           focus={focus}
         />
-        <Button color="greenBig" type="submit" />
         <Input
           type="text"
           name="desc"
@@ -80,6 +79,7 @@ const App = () => {
           placeholder="add a description"
           maxLength="599"
         />
+        <Button color="greenBig" type="submit" />
       </form>
       <ul>
         {loading ? (
