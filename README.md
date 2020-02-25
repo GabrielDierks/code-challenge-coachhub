@@ -1,6 +1,5 @@
-# Code Challenge für Coachhub.io
+# Fullstack todo app
 
-von Gabriel Dierks
 
 ## Spin up commands:
 
@@ -11,3 +10,6 @@ von Gabriel Dierks
 #### npm run dev
 
 - starts the server and the client React App with concurrently
+
+
+Gabriel Dierks
